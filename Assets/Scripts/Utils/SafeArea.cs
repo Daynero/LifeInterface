@@ -6,6 +6,8 @@ namespace Utils
     {
         private RectTransform _panel;
         private Rect _lastSafeArea = new Rect(0, 0, 0, 0);
+        private const int TargetWidth = 1280;
+        private const int TargetHeight = 720;
 
         private void Awake()
         {
@@ -26,18 +28,18 @@ namespace Utils
         {
             _lastSafeArea = r;
 
-            float kW = (float) 1125 / Screen.width;
-            float kH = (float) 2436 / Screen.height;
+            float kW = (float) TargetHeight / Screen.width;
+            float kH = (float) TargetWidth / Screen.height;
             Rect rect = _panel.rect;
             rect.x = r.x * kW;
             rect.y = r.y * kH;
             rect.width = r.width * kW;
             rect.height = r.height * kH;
             _panel.offsetMin = new Vector2(rect.x, rect.y);
-            _panel.offsetMax = new Vector2(rect.width + rect.x - 1125, rect.height + rect.y - 2436);
+            _panel.offsetMax = new Vector2(rect.width + rect.x - TargetHeight, rect.height + rect.y - TargetWidth);
 
             Camera cam = Camera.main;
-            const float origScaleFactor = 2436 / 1125;
+            const float origScaleFactor = TargetWidth / TargetHeight;
             float factScaleFactor = r.height / r.width;
             cam!.orthographicSize = (12f / origScaleFactor) * ((float) Screen.height / Screen.width);
             var camTransform = cam.transform;
