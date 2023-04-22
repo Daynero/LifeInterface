@@ -1,7 +1,7 @@
 using System;
-using Core.GameTime;
 using UniRx;
 using Zenject;
+using static Utils.GlobalConstants;
 
 namespace Screens.GamePausedPopup
 {
@@ -9,15 +9,13 @@ namespace Screens.GamePausedPopup
     {
         private readonly CompositeDisposable _compositeDisposable = new CompositeDisposable();
         private readonly LivesPopupView _view;
-        private readonly GameTime _gameTime;
         private readonly ScreenNavigationSystem _screenNavigationSystem;
+        private readonly LivesController _livesController;
 
-        public LivesPopupPresenter(LivesPopupView view, GameTime gameTime)
+        public LivesPopupPresenter(LivesPopupView view, LivesController livesController)
         {
             _view = view;
-            _gameTime = gameTime;
-            
-            Initialize();
+            _livesController = livesController;
         }
 
         public void Initialize()
@@ -25,16 +23,28 @@ namespace Screens.GamePausedPopup
             _view.OnCloseScreen += CloseScreen;
             _view.OnUseLife += UseLife;
             _view.OnRefillLives += RefillLives;
+
+            _livesController.CurrentLivesObservable
+                .Subscribe(lives => _view.UpdateLives(lives))
+                .AddTo(_compositeDisposable);
+
+            _livesController.TimeLeftObservable
+                .Subscribe(time =>
+                {
+                    string formattedTimeLeft = _livesController.GetFormattedTimeLeft(time);
+                    _view.UpdateTimer(formattedTimeLeft);
+                })
+                .AddTo(_compositeDisposable);
         }
 
         private void RefillLives()
         {
-            
+            _livesController.AddLife(MaxLives);
         }
 
         private void UseLife()
         {
-            
+            _livesController.RemoveLife();
         }
 
         public void Dispose()
@@ -49,6 +59,7 @@ namespace Screens.GamePausedPopup
 
         public override void CloseScreen()
         {
+            OnCloseAction.Invoke();
             _view.OpenCloseScreen(false);
         }
     }

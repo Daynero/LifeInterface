@@ -823,6 +823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDeactivateAfterAwake: 1
+  timer: {fileID: 2511837256518667086}
+  lifeCount: {fileID: 8103968263546634795}
   closeButton: {fileID: 8835617439237504876}
   emptySpaceButton: {fileID: 4417337488470984433}
   refillLivesButton: {fileID: 4843089659112817282}
