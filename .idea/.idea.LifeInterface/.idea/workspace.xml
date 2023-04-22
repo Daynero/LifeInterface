@@ -2,32 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="52a08253-f2ad-4636-9c8f-9a3e06732d5b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Font.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont Atlas Material With Border.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont Atlas Material With Border.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Font/MainFont.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LivesController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/LivesController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/MainThreadDispatcher.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Core/MainThreadDispatcher.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataModels.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/DataModels.cs.meta" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Assets/Sprites/Icons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Objects.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-Full.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-Full.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-NoLives.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-NoLives.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-NotFull.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/PopUp-NotFull.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/Scene.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Sprites/Ref/Scene.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LifeInterface/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LifeInterface/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/MainCanvas.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Popups/LivesPopup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Popups/LivesPopup.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Screens/GameScreen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Screens/GameScreen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/SafeArea.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/SafeArea.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/small-pop-background.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/small-pop-background.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Core/Installers/MainSceneInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Core/Installers/MainSceneInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Screens/GameScreen/GameScreenPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Screens/GameScreen/GameScreenPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Screens/GameScreen/GameScreenView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Screens/GameScreen/GameScreenView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Screens/LivesPopup/LivesPopupPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Screens/LivesPopup/LivesPopupPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Screens/LivesPopup/LivesPopupView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Screens/LivesPopup/LivesPopupView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/GlobalConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-blue-small-back.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-blue-small-back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-blue-small-back.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-blue-small-back.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-green-small-back.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-green-small-back.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-green-small-back.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Buttons/button-green-small-back.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/gui-lives.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/gui-lives.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/life-icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/life-icon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/small-pop-background.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/small-pop-background.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +54,8 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53407686a67f4d21a4ef710a7828900a13b200/3b/0635ada5/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/e2/3381c6bf/IInitializable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/daynero/RiderProjects/LifeInterface/Assets/Scripts/Utils/SafeArea.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -107,10 +110,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="25457">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="25457" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -129,7 +132,7 @@
       <workItem from="1682078908629" duration="2000" />
       <workItem from="1682079387169" duration="2802000" />
       <workItem from="1682102688991" duration="1385000" />
-      <workItem from="1682105156499" duration="721000" />
+      <workItem from="1682105156499" duration="14624000" />
     </task>
     <task id="LOCAL-00001" summary="Added base architecture and screens">
       <created>1682102997944</created>
@@ -138,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682102997944</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added UI to main screen and particular to live popup">
+      <created>1682108089336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1682108089336</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +171,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Added base architecture and screens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added base architecture and screens" />
+    <MESSAGE value="Added UI to main screen and particular to live popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added UI to main screen and particular to live popup" />
   </component>
 </project>

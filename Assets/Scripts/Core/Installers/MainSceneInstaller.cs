@@ -21,6 +21,7 @@ namespace Core.Installers
             Container.BindInterfacesAndSelfTo<AnimationsController>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<ScreenNavigationSystem>().FromNew().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<GameTime.GameTime>().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<MainThreadDispatcher>().FromComponentsInHierarchy().AsSingle().NonLazy();
         }
         
         private void BindViews()

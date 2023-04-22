@@ -16,10 +16,25 @@ namespace Screens.GamePausedPopup
         {
             _view = view;
             _gameTime = gameTime;
+            
+            Initialize();
         }
 
         public void Initialize()
         {
+            _view.OnCloseScreen += CloseScreen;
+            _view.OnUseLife += UseLife;
+            _view.OnRefillLives += RefillLives;
+        }
+
+        private void RefillLives()
+        {
+            
+        }
+
+        private void UseLife()
+        {
+            
         }
 
         public void Dispose()
@@ -29,7 +44,7 @@ namespace Screens.GamePausedPopup
 
         public override void ShowScreen(object extraData = null)
         {
-            
+            _view.OpenCloseScreen(true);
         }
 
         public override void CloseScreen()
