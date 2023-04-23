@@ -1,4 +1,6 @@
+using Controllers;
 using Screens;
+using Screens.DailyBonusPopup;
 using Screens.GamePausedPopup;
 using Screens.GameScreen;
 using Utils;
@@ -23,6 +25,8 @@ namespace Core.Installers
             Container.BindInterfacesAndSelfTo<GameTime.GameTime>().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<MainThreadDispatcher>().FromComponentsInHierarchy().AsSingle().NonLazy();
             Container.BindInterfacesAndSelfTo<LivesController>().FromNew().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<CoinsController>().FromNew().AsSingle().NonLazy();
+            Container.BindInterfacesAndSelfTo<DailyBonusController>().FromNew().AsSingle().NonLazy();
         }
         
         private void BindViews()
@@ -33,6 +37,7 @@ namespace Core.Installers
         {
             Container.BindViewAndPresenter<GameScreenView, GameScreenPresenter>();
             Container.BindViewAndPresenter<LivesPopupView, LivesPopupPresenter>();
+            Container.BindViewAndPresenter<DailyBonusPopupView, DailyBonusPopupPresenter>();
         }
     }
 }

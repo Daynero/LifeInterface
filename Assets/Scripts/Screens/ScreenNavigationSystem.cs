@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Screens.DailyBonusPopup;
 using Screens.GamePausedPopup;
 using Zenject;
 
@@ -11,11 +12,13 @@ namespace Screens
 
         private readonly Dictionary<ScreenName, ScreenPresenter> _screenPresenters;
 
-        public ScreenNavigationSystem(LivesPopupPresenter livesPopupPresenter)
+        public ScreenNavigationSystem(LivesPopupPresenter livesPopupPresenter,
+            DailyBonusPopupPresenter dailyBonusPopupPresenter)
         {
             _screenPresenters = new Dictionary<ScreenName, ScreenPresenter>
             {
                 {ScreenName.Lives, livesPopupPresenter},
+                {ScreenName.DailyBonus, dailyBonusPopupPresenter}
             };
         }
 

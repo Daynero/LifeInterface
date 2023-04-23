@@ -12,6 +12,7 @@ namespace Screens.GameScreen
         [SerializeField] private Button livesButton;
         [SerializeField] private TextMeshProUGUI lifeCount;
         [SerializeField] private TextMeshProUGUI timer;
+        [SerializeField] private TextMeshProUGUI coinsCount;
 
         public event Action OnLivesClick;
         
@@ -28,6 +29,11 @@ namespace Screens.GameScreen
         public void UpdateLives(int lives)
         {
             lifeCount.text = lives.ToString();
+        }
+
+        public void UpdateCoinsCount(long coins)
+        {
+            coinsCount.text = $"Coins: {coins}";
         }
     }
 }

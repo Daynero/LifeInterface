@@ -4,6 +4,7 @@ namespace Screens
     {
         Empty,
         Main,
-        Lives
+        Lives,
+        DailyBonus
     }
 }
