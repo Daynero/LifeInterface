@@ -29,18 +29,6 @@ namespace Screens.DailyBonusPopup
             _view.OnClaimClick += ClaimClick;
         }
 
-        private void ClaimClick()
-        {
-            _coinsController.AddCoins(_currentDailyBonus);
-            PlayerPrefs.SetInt(StringConstants.LastDayRewardKey, DateTime.Now.Day);
-            CloseScreen();
-        }
-
-        public void Dispose()
-        {
-            _compositeDisposable?.Dispose();
-        }
-
         public override void ShowScreen(object extraData = null)
         {
             _view.OpenCloseScreen(true);
@@ -48,10 +36,22 @@ namespace Screens.DailyBonusPopup
             _view.ShowCurrentBonus(_currentDailyBonus);
         }
 
+        private void ClaimClick()
+        {
+            _coinsController.AddCoins(_currentDailyBonus);
+            PlayerPrefs.SetInt(StringConstants.LastDayRewardKey, DateTime.Now.Day);
+            CloseScreen();
+        }
+
         public override void CloseScreen()
         {
             OnCloseAction.Invoke();
             _view.OpenCloseScreen(false);
+        }
+
+        public void Dispose()
+        {
+            _compositeDisposable?.Dispose();
         }
     }
 }

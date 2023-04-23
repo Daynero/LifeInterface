@@ -4,7 +4,7 @@ using UniRx;
 using Zenject;
 using static Utils.GlobalConstants;
 
-namespace Screens.GamePausedPopup
+namespace Screens.LivesPopup
 {
     public class LivesPopupPresenter : ScreenPresenter, IInitializable, IDisposable
     {
@@ -13,7 +13,7 @@ namespace Screens.GamePausedPopup
         private readonly ScreenNavigationSystem _screenNavigationSystem;
         private readonly LivesController _livesController;
 
-        private ReactiveProperty<LivesPopupState> _currentState =
+        private readonly ReactiveProperty<LivesPopupState> _currentState =
             new ReactiveProperty<LivesPopupState>(LivesPopupState.Default);
 
         public LivesPopupPresenter(LivesPopupView view, LivesController livesController)
@@ -24,7 +24,6 @@ namespace Screens.GamePausedPopup
 
         public void Initialize()
         {
-            _view.OnCloseScreen += CloseScreen;
             _view.OnUseLife += UseLife;
             _view.OnRefillLives += RefillLives;
 
@@ -52,6 +51,13 @@ namespace Screens.GamePausedPopup
             _currentState.Subscribe(state => _view.UpdateUIState(state));
         }
 
+        public override void ShowScreen(object extraData = null)
+        {
+            _view.OnCloseScreen += CloseScreen;
+            _view.ShowAppearAnimation();
+            _view.OpenCloseScreen(true);
+        }
+
         private void RefillLives()
         {
             _livesController.AddLife(MaxLives);
@@ -62,20 +68,20 @@ namespace Screens.GamePausedPopup
             _livesController.RemoveLife();
         }
 
+        public override void CloseScreen()
+        {
+            _view.OnCloseScreen -= CloseScreen;
+            _view.ShowDisappearAnimation(() =>
+            {
+                OnCloseAction.Invoke();
+                _view.OpenCloseScreen(false);
+            });
+            
+        }
+
         public void Dispose()
         {
             _compositeDisposable?.Dispose();
-        }
-
-        public override void ShowScreen(object extraData = null)
-        {
-            _view.OpenCloseScreen(true);
-        }
-
-        public override void CloseScreen()
-        {
-            OnCloseAction.Invoke();
-            _view.OpenCloseScreen(false);
         }
     }
 }

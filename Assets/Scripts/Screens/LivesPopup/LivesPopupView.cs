@@ -1,13 +1,13 @@
 using System;
+using Animations;
 using Enums;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Utils;
 using Button = UnityEngine.UI.Button;
 
-namespace Screens.GamePausedPopup
+namespace Screens.LivesPopup
 {
     public class LivesPopupView : ScreenView
     {
@@ -19,21 +19,21 @@ namespace Screens.GamePausedPopup
         [SerializeField] private Button useLifeButton;
         [SerializeField] private RectTransform middlePositionTransform;
         [SerializeField] private VerticalLayoutGroup lifePanelLayoutGroup;
-
+        
+        private LivesPopupAnimation _livesPopupAnimation;
         private RectTransform _refillLivesTransform;
         private RectTransform _useLifeTransform;
         private Vector3 _refillLivesStartPosition;
         private Vector3 _useLifeStartPosition;
-        private Vector3 _refillButtonTargetScale = Vector3.one * 1.2f;
-        private Vector3 _useLifeButtonTargetScale = new Vector3(1.35f, 1.2f, 0);
+        private readonly Vector3 _refillButtonTargetScale = Vector3.one * 1.2f;
+        private readonly Vector3 _useLifeButtonTargetScale = new Vector3(1.35f, 1.2f, 0);
 
         public event Action OnCloseScreen;
         public event Action OnUseLife;
         public event Action OnRefillLives;
 
-        private new void Awake()
+        private void Awake()
         {
-            base.Awake();
             closeButton.ActionWithThrottle(() => OnCloseScreen?.Invoke());
             emptySpaceButton.ActionWithThrottle(() => OnCloseScreen?.Invoke());
             refillLivesButton.ActionWithThrottle(() => OnRefillLives?.Invoke());
@@ -43,8 +43,9 @@ namespace Screens.GamePausedPopup
             _useLifeTransform = useLifeButton.gameObject.GetComponent<RectTransform>();
             _refillLivesStartPosition = _refillLivesTransform.localPosition;
             _useLifeStartPosition = _useLifeTransform.localPosition;
+            _livesPopupAnimation = GetComponent<LivesPopupAnimation>();
         }
-        
+
         public void UpdateTimer(string time)
         {
             timer.text = time;
@@ -77,9 +78,21 @@ namespace Screens.GamePausedPopup
 
             lifePanelLayoutGroup.padding.top = state != LivesPopupState.Default ? 33 : 0;
             lifePanelLayoutGroup.padding.bottom = state == LivesPopupState.Empty ? -8 : 18;
+            lifePanelLayoutGroup.SetLayoutVertical();
             _refillLivesTransform.gameObject.SetActive(state != LivesPopupState.Full);
             _useLifeTransform.gameObject.SetActive(state != LivesPopupState.Empty);
             timer.gameObject.SetActive(state != LivesPopupState.Full);
+        }
+
+        public void ShowAppearAnimation()
+        {
+            _livesPopupAnimation.Appear();
+        }
+
+        public void ShowDisappearAnimation(Action animationCompleted)
+        {
+            _livesPopupAnimation.Disappear();
+            _livesPopupAnimation.OnAnimationCompleted += animationCompleted;
         }
     }
 }

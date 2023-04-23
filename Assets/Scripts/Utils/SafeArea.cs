@@ -41,7 +41,7 @@ namespace Utils
             Camera cam = Camera.main;
             const float origScaleFactor = TargetWidth / TargetHeight;
             float factScaleFactor = r.height / r.width;
-            cam!.orthographicSize = (12f / origScaleFactor) * ((float) Screen.height / Screen.width);
+            cam!.orthographicSize = 12f / origScaleFactor * ((float) Screen.height / Screen.width);
             var camTransform = cam.transform;
             Vector3 camPos = camTransform.position;
             camPos.y = -2 + (origScaleFactor / factScaleFactor - 1) * 9.3f;

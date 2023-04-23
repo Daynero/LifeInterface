@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using Screens.DailyBonusPopup;
-using Screens.GamePausedPopup;
+using Screens.LivesPopup;
 using Zenject;
 
 namespace Screens

@@ -19,9 +19,8 @@ namespace Screens.DailyBonusPopup
         public event Action OnCloseScreen;
         public event Action OnClaimClick;
 
-        private new void Awake()
+        private void Awake()
         {
-            base.Awake();
             closeButton.ActionWithThrottle(() => OnCloseScreen?.Invoke());
             emptySpaceButton.ActionWithThrottle(() => OnCloseScreen?.Invoke());
             claimButton.ActionWithThrottle(() => OnClaimClick?.Invoke());
